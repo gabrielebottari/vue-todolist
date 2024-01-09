@@ -30,6 +30,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+
+            //array di oggetti
             todos : [
                 {
                     text: 'Fare i compiti',
@@ -37,22 +39,29 @@ createApp({
                 },
                 {
                     text: 'Fare la spesa',
-                    done: true,
+                    done: false,
                 },
                 {
                     text: 'Fare il bucato',
-                    done: true,
+                    done: false,
                 },
             ],
         };
     },
 
-    /*
+    
     methods: {
+
+        //funzione per mettere e togliere la classe completed
         toggleTodo(index) {
           this.todos[index].done = !this.todos[index].done;
-        }
+        },
+
+        //rimuovo il todo
+        removeTodo: function(index) {
+            this.todos.splice(index, 1);
+        },
     },
-    */
+    
 // Monto l'istanza di Vue in pagina
 }).mount('#app');
