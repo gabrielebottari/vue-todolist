@@ -64,7 +64,7 @@ createApp({
             this.todos.splice(index, 1);
         },
         
-        // Milestone 3: Aggiungere un nuovo todo
+        //aggiungo un nuovo todo
         addTodo: function() {
             if (this.newTodo.trim() !== '') {
                 this.todos.push({ text: this.newTodo, done: false });

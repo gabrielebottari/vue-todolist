@@ -21,7 +21,7 @@
 
             <!-- input e bottone per aggiungere un nuovo todo -->
             <div>
-                <input v-model="newTodo" placeholder="Inserisci un nuovo to Do">
+                <input v-model="newTodo" @keyup.enter="addTodo" placeholder="Inserisci un nuovo to Do">
                 <button @click="addTodo">Aggiungi</button>
             </div>
             
