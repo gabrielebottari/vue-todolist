@@ -26,7 +26,7 @@
             </div>
             
             <!--lista di todo -->
-            <ul>
+            <ul v-if="todos.length > 0">
                 <li v-for="(todo, index) in todos" :key="index">
 
                     <!--toggle per mettere e togliere la linea -->
@@ -39,6 +39,8 @@
                     <button @click="removeTodo(todo.id)">x</button>
                 </li>
             </ul>
+
+            <p v-else>Nessun todo presente. Aggiungi nuovi todo!</p>
 
         </div>
 
