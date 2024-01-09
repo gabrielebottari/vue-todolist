@@ -18,6 +18,12 @@
     <body>
         
         <div id="app">
+
+            <!-- input e bottone per aggiungere un nuovo todo -->
+            <div>
+                <input v-model="newTodo" placeholder="Inserisci un nuovo to Do">
+                <button @click="addTodo">Aggiungi</button>
+            </div>
             
             <!--lista di todo -->
             <ul>

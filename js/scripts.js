@@ -46,6 +46,8 @@ createApp({
                     done: false,
                 },
             ],
+
+            newTodo: '',
         };
     },
 
@@ -60,6 +62,14 @@ createApp({
         //rimuovo il todo
         removeTodo: function(index) {
             this.todos.splice(index, 1);
+        },
+        
+        // Milestone 3: Aggiungere un nuovo todo
+        addTodo: function() {
+            if (this.newTodo.trim() !== '') {
+                this.todos.push({ text: this.newTodo, done: false });
+                this.newTodo = '';
+            }
         },
     },
     
