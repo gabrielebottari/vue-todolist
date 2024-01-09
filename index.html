@@ -19,30 +19,39 @@
         
         <div id="app">
 
-            <!-- input e bottone per aggiungere un nuovo todo -->
-            <div>
-                <input v-model="newTodo" @keyup.enter="addTodo" placeholder="Inserisci un nuovo to Do">
-                <button @click="addTodo">Aggiungi</button>
-            </div>
+            <div class="container">
+
+                <div class="logo-container p-3 text-center">
+                    <img src="img/logo.png" alt="logo">
+                </div>
+
+                <!-- input e bottone per aggiungere un nuovo todo -->
+                <div class="text-center py-3 mb-2">
+                    <input class="rounded form-control form-control-l w-50 d-inline" v-model="newTodo" @keyup.enter="addTodo" placeholder="Inserisci un nuovo to Do">
+                    <button class="rounded p-2 ms-3" @click="addTodo">Aggiungi</button>
+                </div>
             
-            <!--lista di todo -->
-            <ul v-if="todos.length > 0">
-                <li v-for="(todo, index) in todos" :key="index">
+                <div class="rounded p-2 bg-secondary-subtle fs-4">
+                    <!--lista di todo -->
+                    <ul class="list-group list-group-flush" v-if="todos.length > 0">
+                        <li class="list-group-item list-group-item-secondary p-2 d-flex justify-content-between" v-for="(todo, index) in todos" :key="index">
 
-                    <!--toggle per mettere e togliere la linea -->
-                    <span :class="{ 'completed': todo.done }"
-                    @click="toggleTodo(index)">
-                        {{ todo.text }}
-                    </span>
+                            <!--toggle per mettere e togliere la linea -->
+                            <span :class="{ 'completed': todo.done }"
+                            @click="toggleTodo(index)">
+                                {{ todo.text }}
+                            </span>
 
-                    <!--bottone per eliminare todo -->
-                    <button @click="removeTodo(todo.id)">x</button>
-                </li>
-            </ul>
+                            <!--bottone per eliminare todo -->
+                            <a @click="removeTodo(todo.id)"><i class="fa-solid fa-xmark"></i></a>
+                        </li>
+                    </ul>
 
-            <p v-else>Nessun todo presente. Aggiungi nuovi todo!</p>
+                    <p class="text-center mt-2" v-else>Nessun todo presente. Aggiungi nuovi todo! <i class="fa-regular fa-face-smile-beam"></i></p>
 
-        </div>
+                </div>
+
+            </div>
 
         </div>
 
