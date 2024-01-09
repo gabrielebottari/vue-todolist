@@ -18,9 +18,18 @@
     <body>
         
         <div id="app">
-            <h1>
-                {{ message }}
-            </h1>
+            
+             <!-- Milestone 1: Lista di todo -->
+            <ul>
+                <li v-for="(todo, index) in todos" :key="index"
+                :class="{ 'completed': todo.done }"
+                >
+                    {{ todo.text }}
+                </li>
+            </ul>
+
+        </div>
+
         </div>
 
         <!-- Vue -->

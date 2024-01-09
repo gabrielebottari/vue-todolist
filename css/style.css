@@ -10,3 +10,11 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/*
+    MAIN
+*/
+
+.completed {
+    text-decoration: line-through;
+  }
